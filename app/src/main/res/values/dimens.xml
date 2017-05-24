@@ -1,3 +1,12 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="action_button_margin">16dp</dimen>
+    <dimen name="action_button_border">0dp</dimen>
+    <dimen name="action_button_elevation">6dp</dimen>
+    <dimen name="action_button_pressed_translation">12dp</dimen>
+    <dimen name="dialog_stock_margin_bottom">4dp</dimen>
+    <dimen name="dialog_stock_horizontal_margin">4dp</dimen>
+    <dimen name="dialog_stock_margin_top">16dp</dimen>
+    <dimen name="bid_price_margin_right">10sp</dimen>
+    <dimen name="percent_change_horizontal_padding">3dp</dimen>
 </resources>
