@@ -44,10 +44,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     TextView error;
     private StockAdapter adapter;
 
-    // TODO Add details screen
     @Override
     public void onClick(String symbol) {
+
         Timber.d("Symbol clicked: %s", symbol);
+        DetailActivity.startActivity(this, symbol);
     }
 
     @Override

@@ -9,4 +9,5 @@
     <dimen name="dialog_stock_margin_top">16dp</dimen>
     <dimen name="bid_price_margin_right">10sp</dimen>
     <dimen name="percent_change_horizontal_padding">3dp</dimen>
+    <dimen name="activity_detail_labels_margin_spacing">8dp</dimen>
 </resources>

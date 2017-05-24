@@ -38,5 +38,8 @@
     <string name="a11y_stock_name">Stock name: <xliff:g id="stock">%1$s</xliff:g></string>
     <string name="a11y_current_price">Current price: <xliff:g id="price">%1$s</xliff:g></string>
     <string name="a11y_price_change">Price change: <xliff:g id="price">%1$s</xliff:g></string>
+    <string name="label_stock">Stock:</string>
+    <string name="label_bid_price">Bid price:</string>
+    <string name="label_price_change">Price change:</string>
 
 </resources>
