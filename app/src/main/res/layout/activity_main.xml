@@ -31,6 +31,7 @@
         android:layout_margin="@dimen/action_button_margin"
         android:onClick="button"
         android:src="@drawable/fab_plus"
+        android:contentDescription="@string/a11y_fab_add_stock"
         app:backgroundTint="@color/material_blue_500"
         app:borderWidth="@dimen/action_button_border"
         app:elevation="@dimen/action_button_elevation"
