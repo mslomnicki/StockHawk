@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 String symbol = adapter.getSymbolAtPosition(viewHolder.getAdapterPosition());
                 PrefUtils.removeStock(MainActivity.this, symbol);
                 getContentResolver().delete(Contract.Quote.makeUriForStock(symbol), null, null);
+                onRefresh();
             }
         }).attachToRecyclerView(stockRecyclerView);
 
@@ -91,6 +92,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         return networkInfo != null && networkInfo.isConnectedOrConnecting();
+    }
+
+    @Override
+    protected void onResume() {
+        onRefresh();
+        super.onResume();
     }
 
     @Override
