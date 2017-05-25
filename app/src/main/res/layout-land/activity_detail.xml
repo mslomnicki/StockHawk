@@ -4,10 +4,10 @@
               android:id="@+id/parent_layout"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               tools:context="com.udacity.stockhawk.ui.DetailActivity">
 
-    <include layout="@layout/detail_stock_info"/>
+    <include layout="@layout/detail_stock_info" />
 
     <include layout="@layout/detail_stock_chart"/>
 </LinearLayout>
