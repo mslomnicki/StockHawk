@@ -41,5 +41,8 @@
     <string name="label_stock">Stock:</string>
     <string name="label_bid_price">Bid price:</string>
     <string name="label_price_change">Price change:</string>
+    <string name="widget_title">Stock Hawk Widget</string>
+    <string name="error_widget_no_stocks">No stocks added! Add some stocks!</string>
+    <string name="a11y_details_chart">Bid price chart</string>
 
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/widget_layout"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:drawable/screen_background_light_transparent"
+             android:padding="@dimen/widget_margin">
+
+    <ListView
+        android:id="@+id/widget_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        tools:listitem="@layout/list_item_widget"/>
+
+    <TextView
+        android:id="@+id/widget_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/error_widget_no_stocks"
+        android:contentDescription="@string/error_widget_no_stocks"
+        android:textAppearance="?android:textAppearanceLarge"/>
+</FrameLayout>
+

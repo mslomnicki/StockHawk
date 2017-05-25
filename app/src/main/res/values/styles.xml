@@ -22,4 +22,5 @@
     </style>
 
     <style name="StockDetailsLabelStyle" parent="BidPriceTextStyle"/>
+
 </resources>
