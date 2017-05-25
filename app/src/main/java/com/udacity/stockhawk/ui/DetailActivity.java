@@ -9,15 +9,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.utils.EntryXComparator;
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.FormatUtils;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -115,35 +121,34 @@ public class DetailActivity extends AppCompatActivity {
         List<Entry> entries = new ArrayList<>();
         StringTokenizer tokenizer = new StringTokenizer(historyData, "\n");
         //TODO repair chart
-        long i = 0;
         while (tokenizer.hasMoreTokens()) {
             try {
                 String nextLine = tokenizer.nextToken();
                 String[] strings = historyParser.parseLine(nextLine);
                 long x = Long.parseLong(strings[0]);
                 float y = Float.parseFloat(strings[1]);
-                x = i++;
                 entries.add(new Entry(x, y));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        Collections.sort(entries, new EntryXComparator());
         mChart.getDescription().setEnabled(false);
         LineDataSet lineDataSet = new LineDataSet(entries, symbol);
         LineData data = new LineData(lineDataSet);
         lineDataSet.setColor(R.color.colorAccent);
         lineDataSet.setLineWidth(3f);
         lineDataSet.setDrawCircles(false);
-//        mChart.getXAxis().setValueFormatter(new IAxisValueFormatter() {
-//
-//            private DateFormat mDateInstance = DateFormat.getDateInstance();;
-//
-//            @Override
-//            public String getFormattedValue(float v, AxisBase axisBase) {
-//                long stamp = (long) v;
-//                return mDateInstance.format(new Date(stamp));
-//            }
-//        });
+        mChart.getXAxis().setValueFormatter(new IAxisValueFormatter() {
+
+            private DateFormat mDateInstance = DateFormat.getDateInstance();
+
+            @Override
+            public String getFormattedValue(float v, AxisBase axisBase) {
+                long stamp = (long) v;
+                return mDateInstance.format(new Date(stamp));
+            }
+        });
         mChart.setData(data);
         mChart.invalidate();
     }
